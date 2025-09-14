@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { use, useContext } from 'react'
 import './navbar.css'
 import arrow_icon from '../../assets/arrow_icon.png'
+import { coinContext } from '../../context/CoinContext'
 function navbar() {
+
+  const {setCurrency} = useContext(coinContext);
+
   return (
     <div className='navbar'>
        <span className='logo'>🚀Crypto Dash</span>
@@ -13,7 +17,7 @@ function navbar() {
 
         </ul>
         <div className="nav-right">
-            <select>
+            <select onChange={(event)=> setCurrency(event.target.value)}>
                 <option value="USD">USD</option>
                 <option value="EU">EU</option>
                 <option value="PKR">PKR</option>

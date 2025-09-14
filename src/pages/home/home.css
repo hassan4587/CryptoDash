@@ -59,13 +59,13 @@
     max-width: 800px;
     margin: auto;
     background: linear-gradient(rgba(84,3,255,0.15), rgba(105,2,153,0.15));
-    border-radius: 15px;
+    border-radius: 15px 15px 0px 0px;
 }
 
 .table-layout{
     display: grid;
-    grid-template-columns: 0.5fr 2fr 1fr 1fr 1.5fr;
-    padding:15px 20px;
+    grid-template-columns: 0.5fr 1fr 1fr 1fr 2fr;
+    padding:10px 20px;
     align-items: center;
     border-bottom: 1px solid #3c3c3c;
 }
