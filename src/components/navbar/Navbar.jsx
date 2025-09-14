@@ -19,7 +19,7 @@ function navbar() {
         <div className="nav-right">
             <select onChange={(event)=> setCurrency(event.target.value)}>
                 <option value="USD">USD</option>
-                <option value="EU">EU</option>
+                <option value="EUR">EU</option>
                 <option value="PKR">PKR</option>
 
             </select>

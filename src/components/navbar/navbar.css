@@ -27,7 +27,10 @@
     align-items: center;
     gap: max(1vw, 12px);
 }
-
+.nav-right select:hover{
+    background: #000;
+    color: white;
+}
 .navbar select{
     padding: 5px 8px;
     border-radius: 6px;
@@ -57,4 +60,31 @@
 
 .navbar img{
     width: 13px;
+}
+
+
+@media (max-width: 900px){
+    .navbar{
+        padding: 20px 8%;
+
+    }
+    .navbar button{
+        gap:8px;
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px){
+    .navbar{
+        padding: 20px 5%;
+
+    }
+    .navbar ul{
+        display: none;}
+
+    .navbar button img{
+        width: 12px;
+        
+    }
 }

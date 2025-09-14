@@ -3,11 +3,11 @@ import "./home.css";
 import { coinContext } from "../../context/CoinContext";
 function Home() {
   const { allCoins, currency } = useContext(coinContext);
-  const [displayCoinData, setDisplayCoinData] = useState([]);
+  // const [displayCoinData, setDisplayCoinData] = useState([]);
 
-  useEffect(() => {
-    setDisplayCoinData(allCoins);
-  }, [allCoins]);
+  // useEffect(() => {
+  //   setDisplayCoinData(allCoins);
+  // }, [allCoins]);
   return (
     <div className="home">
       <div className="hero">
@@ -31,18 +31,26 @@ function Home() {
             <p style={{ textAlign: "center" }}>24H Change</p>
             <p className="market-cap">Market Cap</p>
           </div>
-          {displayCoinData.slice(0,10).map((item, index)=>(
+          {allCoins.slice(0, 10).map((item, index) => (
             <div key={index} className="table-layout">
               <p>{item.market_cap_rank}</p>
               <div>
                 <img src={item.image} alt="" />
-                <p>{item.name + ' - ' +  item.symbol}</p>
+                <p>{item.name + " - " + item.symbol}</p>
               </div>
-              <p>{currency} {item.current_price}</p>
-            </div> 
-          ))                              }
+              <p>
+                {" "}
+                {item.current_price.toLocaleString()} {currency}
+              </p>
+              <p className={item.price_change_percentage_24h>0?"green":"red" }>
+                {Math.floor(item.price_change_percentage_24h * 100) / 100}</p>
+              <p className="market-cap">
+                {" "}
+                {item.market_cap.toLocaleString()} {currency}
+              </p>
+            </div>
+          ))}
         </div>
-
       </div>
     </div>
   );
