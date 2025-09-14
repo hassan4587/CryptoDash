@@ -1,11 +1,10 @@
 import React from 'react'
 import './navbar.css'
-import logo from '../../assets/logo.png'
 import arrow_icon from '../../assets/arrow_icon.png'
 function navbar() {
   return (
     <div className='navbar'>
-        <img src={logo}  alt="logo" className='logo' />
+       <span className='logo'>🚀Crypto Dash</span>
         <ul>
             <li>Home</li>
             <li>Features</li>
